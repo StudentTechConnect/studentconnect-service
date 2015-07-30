@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/StudentConnectService" xmlns:tns="http://www.example.org/StudentConnectService" elementFormDefault="qualified">
+
+    <complexType name="UserBasic">
+    	<sequence>
+    		<element name="userid" type="long"></element>
+    		<element name="username" type="string"></element>
+    		<element name="Name" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="UserBasicProfile">
+    	<complexContent>
+    		<extension base="tns:UserBasic">
+    			<sequence>
+    				<element name="profilePicture" type="string"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UserMedium">
+    	<complexContent>
+    		<extension base="tns:UserBasicProfile">
+    			<sequence>
+    				<element name="mobile" type="string"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UserDetails">
+    	<complexContent>
+    		<extension base="tns:UserBasicProfile">
+    			<sequence>
+    				<element name="location" type="string"></element>
+    				<element name="education" type="string"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UserFullDetails">
+    	<complexContent>
+    		<extension base="tns:UserDetails">
+    			<sequence>
+    				<element name="mobile" type="string"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="Post">
+    	<sequence>
+    		<element name="title" type="string"></element>
+    		<element name="description" type="string"></element>
+    		<element name="date" type="dateTime"></element>
+    	</sequence>
+    </complexType>
+</schema>
