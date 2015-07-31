@@ -1,1 +1,1 @@
-# studentconnect-service
+# studentconnect-service spring service
